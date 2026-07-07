@@ -13,7 +13,7 @@ const TOKENS = [
     holders: 12_940,
     change: 18.4,
     milestone: 82,
-    color: "#b6f34e",
+    color: "#a78bfa",
   },
   {
     ticker: "ORBIT",

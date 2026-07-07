@@ -5,7 +5,8 @@ for a creator — the creator's supply allocation is locked in an on-chain
 escrow until the verified creator (via X sign-in) claims it.
 
 Inspired by the structure of modern Solana launchpad sites, rebuilt with
-original copy, original artwork, and a dark lime/emerald theme.
+original copy, original artwork, and a dark violet/cyan "midnight" theme
+with gradient CTAs and a hexagonal vault logo.
 
 ## Pages
 

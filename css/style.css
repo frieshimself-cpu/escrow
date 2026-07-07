@@ -1,30 +1,31 @@
 /* ==========================================================================
    SupplyFun — theme & layout
-   Dark "terminal lime" theme: near-black canvas, lime primary, mint support.
+   Dark "midnight violet" theme: deep indigo canvas, violet primary,
+   cyan support, violet→cyan gradient CTAs.
    ========================================================================== */
 
 :root {
-  --bg: #0a0e09;
-  --bg-soft: #0f150d;
-  --panel: #121a10;
-  --panel-2: #172114;
-  --line: rgba(214, 255, 170, 0.10);
-  --line-strong: rgba(214, 255, 170, 0.22);
-  --text: #eef5e9;
-  --text-dim: #9fb096;
-  --text-faint: #6c7a65;
-  --lime: #b6f34e;
-  --lime-deep: #8fd426;
+  --bg: #0b0a16;
+  --bg-soft: #0f0d1e;
+  --panel: #131126;
+  --panel-2: #191634;
+  --line: rgba(196, 181, 253, 0.10);
+  --line-strong: rgba(196, 181, 253, 0.22);
+  --text: #efedfa;
+  --text-dim: #a5a1c2;
+  --text-faint: #6e6a8e;
+  --accent: #a78bfa;
+  --accent-deep: #7c3aed;
   --mint: #4ade80;
   --amber: #fbbf24;
   --rose: #fb7185;
   --sky: #7dd3fc;
-  --ink: #0b1006;
+  --ink: #120e26;
   --radius: 20px;
   --radius-sm: 12px;
   --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.7);
-  --glow: 0 0 0 1px rgba(182, 243, 78, 0.25), 0 8px 40px -8px rgba(182, 243, 78, 0.35);
-  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --glow: 0 0 0 1px rgba(167, 139, 250, 0.25), 0 8px 40px -8px rgba(139, 92, 246, 0.35);
+  --font-display: "Sora", "Segoe UI", system-ui, sans-serif;
   --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
 }
 
@@ -46,8 +47,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(900px 500px at 85% -10%, rgba(182, 243, 78, 0.09), transparent 60%),
-    radial-gradient(700px 420px at -10% 30%, rgba(74, 222, 128, 0.07), transparent 60%);
+    radial-gradient(900px 500px at 85% -10%, rgba(139, 92, 246, 0.10), transparent 60%),
+    radial-gradient(700px 420px at -10% 30%, rgba(34, 211, 238, 0.06), transparent 60%);
   pointer-events: none;
   z-index: 0;
 }
@@ -70,10 +71,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--lime);
+  color: var(--accent);
   margin-bottom: 16px;
 }
-.eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--lime); border-radius: 2px; }
+.eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--accent); border-radius: 2px; }
 
 .section { padding: 96px 0; }
 .section-head { max-width: 640px; margin-bottom: 48px; }
@@ -100,11 +101,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 }
 .btn:active { transform: translateY(1px) scale(0.99); }
 
-.btn-primary { background: var(--lime); color: var(--ink); }
+.btn-primary { background: linear-gradient(115deg, #8b5cf6, #06b6d4); color: #fff; }
 .btn-primary:hover { box-shadow: var(--glow); transform: translateY(-1px); }
 
 .btn-ghost { background: transparent; color: var(--text); border-color: var(--line-strong); }
-.btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
 .btn-dark { background: var(--panel-2); color: var(--text); border-color: var(--line); }
 .btn-dark:hover { border-color: var(--line-strong); }
@@ -120,7 +121,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   top: 0;
   z-index: 50;
   backdrop-filter: blur(14px);
-  background: rgba(10, 14, 9, 0.82);
+  background: rgba(11, 10, 22, 0.82);
   border-bottom: 1px solid var(--line);
 }
 .nav-inner {
@@ -139,7 +140,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   letter-spacing: -0.02em;
 }
 .logo .mark { width: 32px; height: 32px; }
-.logo em { font-style: normal; color: var(--lime); }
+.logo em { font-style: normal; color: var(--accent); }
 
 .nav-links { display: flex; gap: 26px; list-style: none; }
 .nav-links a {
@@ -179,7 +180,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   margin-bottom: 22px;
 }
 .hero h1 .hl {
-  color: var(--lime);
+  color: var(--accent);
   position: relative;
 }
 .hero p.lede { color: var(--text-dim); font-size: 18px; max-width: 520px; margin-bottom: 34px; }
@@ -202,7 +203,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: var(--lime);
+  color: var(--accent);
   flex: none;
 }
 .ca-bar code {
@@ -222,8 +223,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   font-family: var(--font-display);
   font-size: 12.5px;
   font-weight: 600;
-  color: var(--ink);
-  background: var(--lime);
+  color: #fff;
+  background: linear-gradient(115deg, #8b5cf6, #06b6d4);
   border: none;
   border-radius: 999px;
   padding: 8px 16px;
@@ -248,14 +249,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   cursor: pointer;
   transition: border-color 0.15s ease, color 0.15s ease;
 }
-.ca-chip:hover { border-color: var(--lime); color: var(--lime); }
+.ca-chip:hover { border-color: var(--accent); color: var(--accent); }
 .ca-chip span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
 }
-.ca-chip b { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.1em; color: var(--lime); flex: none; }
+.ca-chip b { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.1em; color: var(--accent); flex: none; }
 
 .hero-trust { display: flex; align-items: center; gap: 12px; color: var(--text-faint); font-size: 13.5px; }
 .hero-trust .avatars { display: flex; }
@@ -302,10 +303,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .art-card p { font-size: 12.5px; color: var(--text-dim); line-height: 1.45; }
 .art-card .art-meter {
   margin-top: 12px; height: 6px; border-radius: 3px;
-  background: rgba(214, 255, 170, 0.12);
+  background: rgba(196, 181, 253, 0.12);
   overflow: hidden;
 }
-.art-card .art-meter i { display: block; height: 100%; border-radius: 3px; background: var(--lime); }
+.art-card .art-meter i { display: block; height: 100%; border-radius: 3px; background: var(--accent); }
 
 /* --------------------------------------------------------------------------
    Stats bar
@@ -326,7 +327,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   font-family: var(--font-display);
   font-size: clamp(26px, 3vw, 36px);
   font-weight: 700;
-  color: var(--lime);
+  color: var(--accent);
   letter-spacing: -0.02em;
 }
 .stat span { font-size: 13px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; }
@@ -370,8 +371,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .step .num {
   font-family: var(--font-display);
   font-size: 14px; font-weight: 700;
-  color: var(--ink);
-  background: var(--lime);
+  color: #fff;
+  background: linear-gradient(115deg, #8b5cf6, #06b6d4);
   width: 44px; height: 44px;
   border-radius: 12px;
   display: grid; place-items: center;
@@ -402,8 +403,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   flex: none;
   width: 22px; height: 22px;
   border-radius: 7px;
-  background: rgba(182, 243, 78, 0.14);
-  color: var(--lime);
+  background: rgba(167, 139, 250, 0.14);
+  color: var(--accent);
   font-size: 12px; font-weight: 700;
   display: grid; place-items: center;
   margin-top: 2px;
@@ -434,7 +435,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   transition: all 0.15s ease;
 }
 .tab:hover { color: var(--text); border-color: var(--line-strong); }
-.tab.active { background: var(--lime); border-color: var(--lime); color: var(--ink); }
+.tab.active { background: var(--accent); border-color: var(--accent); color: var(--ink); }
 
 .token-grid {
   display: grid;
@@ -450,7 +451,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   cursor: pointer;
 }
 .token-card:hover {
-  border-color: rgba(182, 243, 78, 0.4);
+  border-color: rgba(167, 139, 250, 0.4);
   transform: translateY(-4px);
   box-shadow: var(--shadow);
 }
@@ -494,18 +495,18 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .milestone { font-size: 12px; color: var(--text-faint); }
 .milestone .bar {
   height: 7px; border-radius: 4px;
-  background: rgba(214, 255, 170, 0.1);
+  background: rgba(196, 181, 253, 0.1);
   overflow: hidden;
   margin-top: 7px;
 }
 .milestone .bar i {
   display: block; height: 100%;
-  background: linear-gradient(90deg, var(--lime-deep), var(--lime));
+  background: linear-gradient(90deg, var(--accent-deep), var(--accent));
   border-radius: 4px;
   transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .milestone .row { display: flex; justify-content: space-between; }
-.milestone .row b { color: var(--lime); font-weight: 600; }
+.milestone .row b { color: var(--accent); font-weight: 600; }
 
 .gallery-more { margin-top: 36px; text-align: center; }
 .empty-note {
@@ -528,12 +529,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .mile-track { position: relative; margin: 44px 0 12px; }
 .mile-line {
   height: 8px; border-radius: 4px;
-  background: rgba(214, 255, 170, 0.1);
+  background: rgba(196, 181, 253, 0.1);
   overflow: hidden;
 }
 .mile-line i {
   display: block; height: 100%; width: 0;
-  background: linear-gradient(90deg, var(--lime-deep), var(--lime));
+  background: linear-gradient(90deg, var(--accent-deep), var(--accent));
   border-radius: 4px;
   transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -550,7 +551,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   border: 3px solid var(--line-strong);
   transition: all 0.4s ease;
 }
-.mile-node.hit::before { background: var(--lime); border-color: var(--lime); box-shadow: 0 0 16px rgba(182, 243, 78, 0.5); }
+.mile-node.hit::before { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 16px rgba(167, 139, 250, 0.5); }
 .mile-node b { display: block; font-family: var(--font-display); font-size: 15px; }
 .mile-node span { font-size: 12px; color: var(--text-faint); }
 
@@ -560,7 +561,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .cta-panel {
   text-align: center;
   background:
-    radial-gradient(600px 300px at 50% 0%, rgba(182, 243, 78, 0.14), transparent 70%),
+    radial-gradient(600px 300px at 50% 0%, rgba(167, 139, 250, 0.14), transparent 70%),
     linear-gradient(160deg, var(--panel-2), var(--panel));
   border: 1px solid var(--line-strong);
   border-radius: calc(var(--radius) + 8px);
@@ -590,7 +591,7 @@ footer { border-top: 1px solid var(--line); padding: 72px 0 40px; background: va
 }
 .footer-col ul { list-style: none; display: grid; gap: 12px; }
 .footer-col a { font-size: 14.5px; color: var(--text-dim); transition: color 0.15s ease; }
-.footer-col a:hover { color: var(--lime); }
+.footer-col a:hover { color: var(--accent); }
 .footer-base {
   border-top: 1px solid var(--line);
   padding-top: 28px;
@@ -611,7 +612,7 @@ footer { border-top: 1px solid var(--line); padding: 72px 0 40px; background: va
   color: var(--text-dim);
   transition: all 0.15s ease;
 }
-.footer-social a:hover { border-color: var(--lime); color: var(--lime); }
+.footer-social a:hover { border-color: var(--accent); color: var(--accent); }
 .disclaimer { font-size: 12px; color: var(--text-faint); max-width: 760px; margin-top: 20px; line-height: 1.6; }
 
 /* --------------------------------------------------------------------------
@@ -619,7 +620,7 @@ footer { border-top: 1px solid var(--line); padding: 72px 0 40px; background: va
    -------------------------------------------------------------------------- */
 .modal-backdrop {
   position: fixed; inset: 0;
-  background: rgba(5, 8, 4, 0.7);
+  background: rgba(8, 6, 18, 0.7);
   backdrop-filter: blur(6px);
   display: grid; place-items: center;
   z-index: 100;
@@ -654,7 +655,7 @@ footer { border-top: 1px solid var(--line); padding: 72px 0 40px; background: va
   transition: border-color 0.15s ease;
   margin-bottom: 10px;
 }
-.wallet-option:hover { border-color: var(--lime); }
+.wallet-option:hover { border-color: var(--accent); }
 .wallet-option .w-icon {
   width: 36px; height: 36px; border-radius: 10px;
   display: grid; place-items: center;
@@ -704,7 +705,7 @@ footer { border-top: 1px solid var(--line); padding: 72px 0 40px; background: va
 }
 .field input:focus, .field textarea:focus, .field select:focus {
   outline: none;
-  border-color: var(--lime);
+  border-color: var(--accent);
 }
 .field textarea { resize: vertical; min-height: 90px; }
 
@@ -719,7 +720,7 @@ footer { border-top: 1px solid var(--line); padding: 72px 0 40px; background: va
   color: var(--text-dim);
 }
 .escrow-preview .row { display: flex; justify-content: space-between; }
-.escrow-preview b { color: var(--lime); font-family: var(--font-display); }
+.escrow-preview b { color: var(--accent); font-family: var(--font-display); }
 
 .layout-2col { display: grid; grid-template-columns: 1fr 380px; gap: 40px; align-items: start; padding-bottom: 96px; }
 .side-card {
@@ -751,7 +752,7 @@ footer { border-top: 1px solid var(--line); padding: 72px 0 40px; background: va
   font-family: var(--font-display); font-weight: 700; font-size: 14px;
   color: var(--text-dim);
 }
-.verify-step.done .v-num { background: var(--lime); border-color: var(--lime); color: var(--ink); }
+.verify-step.done .v-num { background: var(--accent); border-color: var(--accent); color: var(--ink); }
 .verify-step b { display: block; font-family: var(--font-display); font-size: 15px; }
 .verify-step span { font-size: 13.5px; color: var(--text-dim); }
 .verify-step .btn { margin-left: auto; }
@@ -762,7 +763,7 @@ footer { border-top: 1px solid var(--line); padding: 72px 0 40px; background: va
   bottom: 28px; left: 50%;
   transform: translate(-50%, 80px);
   background: var(--panel-2);
-  border: 1px solid var(--lime);
+  border: 1px solid var(--accent);
   color: var(--text);
   font-size: 14px;
   padding: 13px 22px;
