@@ -9,7 +9,40 @@ document.addEventListener("DOMContentLoaded", () => {
   initMilestoneTrack();
   initLaunchForm();
   initClaimFlow();
+  initCaCopy();
 });
+
+/* ------------------------------------------------------------------ */
+/* Contract address copy                                               */
+/* ------------------------------------------------------------------ */
+function initCaCopy() {
+  document.querySelectorAll("[data-copy-ca]").forEach((btn) =>
+    btn.addEventListener("click", async () => {
+      const ca = btn.dataset.copyCa;
+      let ok = false;
+      try {
+        await navigator.clipboard.writeText(ca);
+        ok = true;
+      } catch {
+        const ta = document.createElement("textarea");
+        ta.value = ca;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        ok = document.execCommand("copy");
+        ta.remove();
+      }
+      toast(ok ? "Contract address copied" : ca);
+      const label = btn.querySelector("[data-copy-label]");
+      if (label && ok) {
+        const prev = label.textContent;
+        label.textContent = "Copied ✓";
+        setTimeout(() => (label.textContent = prev), 1800);
+      }
+    })
+  );
+}
 
 /* ------------------------------------------------------------------ */
 /* Mobile nav                                                          */

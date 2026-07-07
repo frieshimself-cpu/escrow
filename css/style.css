@@ -173,6 +173,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   gap: 56px;
   align-items: center;
 }
+.hero-grid > * { min-width: 0; }
 .hero h1 {
   font-size: clamp(38px, 5.6vw, 64px);
   margin-bottom: 22px;
@@ -183,6 +184,78 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 }
 .hero p.lede { color: var(--text-dim); font-size: 18px; max-width: 520px; margin-bottom: 34px; }
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+
+/* Contract address bar */
+.ca-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 7px 7px 7px 18px;
+  margin-bottom: 30px;
+}
+.ca-bar .ca-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--lime);
+  flex: none;
+}
+.ca-bar code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 13px;
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.ca-copy {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--lime);
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.ca-copy:hover { box-shadow: var(--glow); }
+.ca-copy:active { transform: scale(0.97); }
+
+.ca-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 12px;
+  color: var(--text-dim);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.ca-chip:hover { border-color: var(--lime); color: var(--lime); }
+.ca-chip span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.ca-chip b { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.1em; color: var(--lime); flex: none; }
 
 .hero-trust { display: flex; align-items: center; gap: 12px; color: var(--text-faint); font-size: 13.5px; }
 .hero-trust .avatars { display: flex; }
