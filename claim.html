@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claim your supply — SupplyFun</title>
+  <meta name="description" content="Creators: verify your X handle and claim the token supply waiting for you in escrow on SupplyFun." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="index.html">
+        <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="10" width="28" height="20" rx="6" fill="#b6f34e"/>
+          <path d="M16 2 L23 10 H9 Z" fill="#4ade80"/>
+          <rect x="12" y="16" width="8" height="8" rx="2" fill="#0b1006"/>
+          <circle cx="16" cy="20" r="1.6" fill="#b6f34e"/>
+        </svg>
+        Supply<em>Fun</em>
+      </a>
+      <ul class="nav-links">
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="launch.html">Launch</a></li>
+        <li><a href="claim.html" class="active">Claim</a></li>
+        <li><a href="index.html#how-it-works">How it works</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-sm" data-open-wallet>Connect wallet</button>
+        <a class="btn btn-primary btn-sm" href="launch.html">Launch token</a>
+        <button class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <nav class="nav-mobile">
+      <a href="explore.html">Explore</a>
+      <a href="launch.html">Launch</a>
+      <a href="claim.html">Claim</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="#" data-open-wallet>Connect wallet</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Claim</span>
+        <h1>Someone launched a token for you?<br/>Come get your share.</h1>
+        <p>If a token was deployed against your X handle, a slice of its supply is sitting in escrow with your name on it. Verifying takes about a minute. (Demo flow — the buttons below simulate each step.)</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:12px">
+      <div class="wrap layout-2col">
+        <div class="verify-steps" id="claim-flow">
+          <div class="verify-step">
+            <div class="v-num">1</div>
+            <div>
+              <b>Sign in with X</b>
+              <span>Prove you control the handle the token was launched for.</span>
+            </div>
+            <button class="btn btn-primary btn-sm" data-step-action="Signed in with X">Sign in</button>
+          </div>
+          <div class="verify-step">
+            <div class="v-num">2</div>
+            <div>
+              <b>Connect your wallet</b>
+              <span>This is where your escrowed supply will land.</span>
+            </div>
+            <button class="btn btn-primary btn-sm" data-step-action="Wallet connected">Connect</button>
+          </div>
+          <div class="verify-step">
+            <div class="v-num">3</div>
+            <div>
+              <b>Claim your supply</b>
+              <span>One transaction. The vault opens, and the tokens are yours.</span>
+            </div>
+            <button class="btn btn-primary btn-sm" data-step-action="Claim submitted">Claim</button>
+          </div>
+        </div>
+
+        <aside class="side-card">
+          <h4>Good to know</h4>
+          <ol>
+            <li>Claims never expire — your supply waits as long as it takes.</li>
+            <li>Verification matches your X account to the handle named at deploy. Close spellings don't count.</li>
+            <li>Claiming costs only the network fee. SupplyFun takes nothing from the creator's share.</li>
+            <li>Everything is inspectable on-chain before you touch anything.</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-base" style="border-top:none;padding-top:0">
+        <span>© 2026 SupplyFun. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="index.html">Home</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="wallet-modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-label="Connect a wallet">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <h3>Connect a wallet</h3>
+      <p>Demo mode — connecting simulates a session, no real wallet is used.</p>
+      <button class="wallet-option"><span class="w-icon" style="background:rgba(182,243,78,.15)">👻</span> Phantom <small>Popular</small></button>
+      <button class="wallet-option"><span class="w-icon" style="background:rgba(125,211,252,.15)">🌊</span> Solflare</button>
+      <button class="wallet-option"><span class="w-icon" style="background:rgba(251,191,36,.15)">🎒</span> Backpack</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

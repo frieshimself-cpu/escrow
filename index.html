@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SupplyFun — Creator token launches with escrowed supply</title>
+  <meta name="description" content="SupplyFun is a Solana launchpad where anyone can deploy a creator token, but the creator's supply stays locked in escrow until the real creator verifies and claims it." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="index.html">
+        <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="10" width="28" height="20" rx="6" fill="#b6f34e"/>
+          <path d="M16 2 L23 10 H9 Z" fill="#4ade80"/>
+          <rect x="12" y="16" width="8" height="8" rx="2" fill="#0b1006"/>
+          <circle cx="16" cy="20" r="1.6" fill="#b6f34e"/>
+        </svg>
+        Supply<em>Fun</em>
+      </a>
+      <ul class="nav-links">
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="launch.html">Launch</a></li>
+        <li><a href="claim.html">Claim</a></li>
+        <li><a href="index.html#how-it-works">How it works</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-sm" data-open-wallet>Connect wallet</button>
+        <a class="btn btn-primary btn-sm" href="launch.html">Launch token</a>
+        <button class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <nav class="nav-mobile">
+      <a href="explore.html">Explore</a>
+      <a href="launch.html">Launch</a>
+      <a href="claim.html">Claim</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="#" data-open-wallet>Connect wallet</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Escrow-secured launchpad on Solana</span>
+          <h1>Launch a token for any creator. <span class="hl">Their supply waits for them.</span></h1>
+          <p class="lede">
+            Anyone can deploy — nobody can rug the creator. SupplyFun locks the
+            creator's allocation in an on-chain escrow the moment a token goes
+            live. Only the verified creator, signed in with their X account,
+            can ever claim it.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary btn-lg" href="launch.html">Launch a token</a>
+            <a class="btn btn-ghost btn-lg" href="explore.html">Explore launches</a>
+          </div>
+          <div class="hero-trust">
+            <div class="avatars">
+              <span style="background:#b6f34e">G</span>
+              <span style="background:#7dd3fc">O</span>
+              <span style="background:#fbbf24">N</span>
+              <span style="background:#fb7185">S</span>
+            </div>
+            Trusted by creators who never asked for a token — until it was already theirs.
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-card a">
+            <div class="art-icon" style="background:rgba(182,243,78,.14)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b6f34e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <h4>Supply escrowed</h4>
+            <p>Creator allocation sealed at deploy time. No backdoors.</p>
+            <div class="art-meter"><i style="width:82%"></i></div>
+          </div>
+          <div class="art-card b">
+            <div class="art-icon" style="background:rgba(125,211,252,.14)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.1V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>
+              </svg>
+            </div>
+            <h4>Creator verified</h4>
+            <p>Identity proven with an X sign-in — not a promise in a bio.</p>
+            <div class="art-meter"><i style="width:100%;background:#7dd3fc"></i></div>
+          </div>
+          <div class="art-card c">
+            <div class="art-icon" style="background:rgba(251,191,36,.14)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+              </svg>
+            </div>
+            <h4>Milestones unlock</h4>
+            <p>Liquidity deepens automatically as the launch performs.</p>
+            <div class="art-meter"><i style="width:61%;background:#fbbf24"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <section class="stats">
+      <div class="wrap stats-grid">
+        <div class="stat"><b data-count="18.4" data-prefix="$" data-suffix="M" data-decimals="1">$0</b><span>Supply escrowed</span></div>
+        <div class="stat"><b data-count="1284" data-suffix="+">0</b><span>Creators claimed</span></div>
+        <div class="stat"><b data-count="9.2" data-prefix="$" data-suffix="M" data-decimals="1">$0</b><span>Liquidity routed</span></div>
+        <div class="stat"><b data-count="4917">0</b><span>Tokens launched</span></div>
+      </div>
+    </section>
+
+    <!-- ================= HANDLE MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <!-- set is duplicated so the loop is seamless -->
+        <span class="chip"><span class="dot"></span><b>@glowbyte</b> claimed $GLOW</span>
+        <span class="chip pending"><span class="dot"></span><b>@orbit_dev</b> supply waiting</span>
+        <span class="chip"><span class="dot"></span><b>@pixelforge_gg</b> hit milestone 4</span>
+        <span class="chip"><span class="dot"></span><b>@cometclips</b> claimed $COMET</span>
+        <span class="chip pending"><span class="dot"></span><b>@sagatales</b> supply waiting</span>
+        <span class="chip"><span class="dot"></span><b>@brewwithmax</b> claimed $BREW</span>
+        <span class="chip"><span class="dot"></span><b>@voltrunner</b> boost activated</span>
+        <span class="chip pending"><span class="dot"></span><b>@dunescribe</b> supply waiting</span>
+        <span class="chip"><span class="dot"></span><b>@glowbyte</b> claimed $GLOW</span>
+        <span class="chip pending"><span class="dot"></span><b>@orbit_dev</b> supply waiting</span>
+        <span class="chip"><span class="dot"></span><b>@pixelforge_gg</b> hit milestone 4</span>
+        <span class="chip"><span class="dot"></span><b>@cometclips</b> claimed $COMET</span>
+        <span class="chip pending"><span class="dot"></span><b>@sagatales</b> supply waiting</span>
+        <span class="chip"><span class="dot"></span><b>@brewwithmax</b> claimed $BREW</span>
+        <span class="chip"><span class="dot"></span><b>@voltrunner</b> boost activated</span>
+        <span class="chip pending"><span class="dot"></span><b>@dunescribe</b> supply waiting</span>
+      </div>
+    </div>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section" id="how-it-works">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2>Three steps between an idea and a claimable token</h2>
+          <p>Deployers kick things off. Escrow keeps everyone honest. Creators collect what's theirs — whenever they show up.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="num">01</div>
+            <h3>Anyone deploys</h3>
+            <p>Pick a creator's X handle, name the token, and launch. You don't need their permission — and you never touch their share.</p>
+            <div class="step-art">
+              <svg width="180" height="80" viewBox="0 0 180 80" fill="none" aria-hidden="true">
+                <rect x="10" y="20" width="60" height="40" rx="10" stroke="#b6f34e" stroke-width="2"/>
+                <text x="40" y="45" text-anchor="middle" fill="#b6f34e" font-family="monospace" font-size="12">deploy()</text>
+                <path d="M78 40 H120" stroke="#4b5942" stroke-width="2" stroke-dasharray="4 4"/>
+                <path d="M114 34 L122 40 L114 46" stroke="#4b5942" stroke-width="2" fill="none"/>
+                <circle cx="148" cy="40" r="18" stroke="#4ade80" stroke-width="2"/>
+                <text x="148" y="45" text-anchor="middle" fill="#4ade80" font-family="monospace" font-size="12">$TKN</text>
+              </svg>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="num">02</div>
+            <h3>Escrow locks the supply</h3>
+            <p>A fixed slice of total supply is sealed in a program-owned vault at mint. It's visible to everyone and spendable by no one.</p>
+            <div class="step-art">
+              <svg width="180" height="80" viewBox="0 0 180 80" fill="none" aria-hidden="true">
+                <rect x="60" y="26" width="60" height="44" rx="10" stroke="#fbbf24" stroke-width="2"/>
+                <path d="M74 26 V18 a16 16 0 0 1 32 0 v8" stroke="#fbbf24" stroke-width="2" fill="none"/>
+                <circle cx="90" cy="46" r="6" stroke="#fbbf24" stroke-width="2"/>
+                <path d="M90 52 V60" stroke="#fbbf24" stroke-width="2"/>
+              </svg>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="num">03</div>
+            <h3>The creator claims</h3>
+            <p>The named creator signs in with X, proves the handle is theirs, and the vault releases directly to their wallet. No middlemen.</p>
+            <div class="step-art">
+              <svg width="180" height="80" viewBox="0 0 180 80" fill="none" aria-hidden="true">
+                <circle cx="40" cy="40" r="18" stroke="#7dd3fc" stroke-width="2"/>
+                <path d="M33 40 l5 5 9 -11" stroke="#7dd3fc" stroke-width="2" fill="none"/>
+                <path d="M66 40 H108" stroke="#4b5942" stroke-width="2" stroke-dasharray="4 4"/>
+                <path d="M102 34 L110 40 L102 46" stroke="#4b5942" stroke-width="2" fill="none"/>
+                <rect x="118" y="22" width="52" height="36" rx="8" stroke="#b6f34e" stroke-width="2"/>
+                <text x="144" y="45" text-anchor="middle" fill="#b6f34e" font-family="monospace" font-size="11">wallet</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURE DEEP DIVES ================= -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="feature-row reveal">
+          <div class="feature-copy">
+            <span class="eyebrow">Creator protection</span>
+            <h3>The creator's cut is untouchable — even by the deployer</h3>
+            <p>Every SupplyFun launch reserves a share of supply that no key on earth can move except the verified creator's. Deployers can hype, trade, and build — they just can't take what isn't theirs.</p>
+            <ul>
+              <li>Escrow vault created atomically with the mint</li>
+              <li>Deployer wallets are program-restricted from the reserved share</li>
+              <li>Unclaimed supply stays sealed indefinitely — no expiry rug</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <svg width="280" height="220" viewBox="0 0 280 220" fill="none" aria-hidden="true">
+              <rect x="70" y="70" width="140" height="110" rx="18" stroke="#b6f34e" stroke-width="2.5"/>
+              <path d="M100 70 V50 a40 40 0 0 1 80 0 v20" stroke="#b6f34e" stroke-width="2.5" fill="none"/>
+              <circle cx="140" cy="118" r="14" stroke="#b6f34e" stroke-width="2.5"/>
+              <path d="M140 132 V152" stroke="#b6f34e" stroke-width="2.5"/>
+              <circle cx="42" cy="150" r="14" stroke="#4b5942" stroke-width="2"/>
+              <path d="M32 140 L52 160 M52 140 L32 160" stroke="#fb7185" stroke-width="2"/>
+              <circle cx="238" cy="150" r="14" stroke="#4ade80" stroke-width="2"/>
+              <path d="M231 150 l5 5 10 -11" stroke="#4ade80" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="feature-row flip reveal">
+          <div class="feature-copy">
+            <span class="eyebrow">Verified handoff</span>
+            <h3>Proof of handle, not proof of promise</h3>
+            <p>Claiming runs through an X OAuth sign-in bound to the handle named at deploy. If the account doesn't match, the vault doesn't open. Screenshots and impersonators get nothing.</p>
+            <ul>
+              <li>OAuth-verified match between handle and claimant</li>
+              <li>Claim transaction settles straight to the creator's wallet</li>
+              <li>Every claim is publicly inspectable on-chain</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <svg width="280" height="220" viewBox="0 0 280 220" fill="none" aria-hidden="true">
+              <rect x="30" y="60" width="100" height="100" rx="16" stroke="#7dd3fc" stroke-width="2.5"/>
+              <text x="80" y="105" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="13">@handle</text>
+              <path d="M62 125 l10 10 22 -24" stroke="#4ade80" stroke-width="2.5" fill="none"/>
+              <path d="M140 110 H190" stroke="#4b5942" stroke-width="2" stroke-dasharray="5 5"/>
+              <path d="M184 103 L192 110 L184 117" stroke="#4b5942" stroke-width="2" fill="none"/>
+              <rect x="198" y="72" width="60" height="76" rx="12" stroke="#b6f34e" stroke-width="2.5"/>
+              <circle cx="228" cy="102" r="10" stroke="#b6f34e" stroke-width="2"/>
+              <path d="M214 130 h28" stroke="#b6f34e" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="feature-row reveal">
+          <div class="feature-copy">
+            <span class="eyebrow">Radical transparency</span>
+            <h3>Everything happens where everyone can see it</h3>
+            <p>Escrow balances, claim events, milestone unlocks, liquidity routing — all of it lives on-chain. If you can read an explorer, you can audit the whole lifecycle of every launch.</p>
+            <ul>
+              <li>Program-owned vaults with public balances</li>
+              <li>Milestone rules committed at deploy, immutable after</li>
+              <li>No admin keys over creator allocations</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <svg width="280" height="220" viewBox="0 0 280 220" fill="none" aria-hidden="true">
+              <rect x="40" y="150" width="34" height="40" rx="6" fill="rgba(182,243,78,.25)" stroke="#b6f34e" stroke-width="2"/>
+              <rect x="90" y="120" width="34" height="70" rx="6" fill="rgba(182,243,78,.25)" stroke="#b6f34e" stroke-width="2"/>
+              <rect x="140" y="90" width="34" height="100" rx="6" fill="rgba(182,243,78,.25)" stroke="#b6f34e" stroke-width="2"/>
+              <rect x="190" y="50" width="34" height="140" rx="6" fill="rgba(182,243,78,.25)" stroke="#b6f34e" stroke-width="2"/>
+              <circle cx="230" cy="42" r="16" stroke="#7dd3fc" stroke-width="2.5"/>
+              <path d="M241 53 L254 66" stroke="#7dd3fc" stroke-width="2.5"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TRENDING LAUNCHES ================= -->
+    <section class="section" id="launches" style="padding-top:24px">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Live on SupplyFun</span>
+          <h2>Trending launches</h2>
+          <p>Demo data shown below — every handle and number here is fictional placeholder content.</p>
+        </div>
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-filter="trending" role="tab">Trending</button>
+          <button class="tab" data-filter="new" role="tab">New</button>
+          <button class="tab" data-filter="unclaimed" role="tab">Unclaimed</button>
+          <button class="tab" data-filter="boosted" role="tab">Liquidity boosted</button>
+          <button class="tab" data-filter="airdrop" role="tab">Airdrops live</button>
+        </div>
+        <div class="token-grid" data-token-grid data-limit="6"></div>
+        <div class="gallery-more">
+          <a class="btn btn-ghost" href="explore.html">Explore all launches</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MILESTONE LIQUIDITY ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="mile-panel reveal" data-mile-progress="68">
+          <div class="section-head" style="margin-bottom:8px">
+            <span class="eyebrow">Milestone liquidity</span>
+            <h2>Liquidity that earns its way in</h2>
+            <p>Instead of dumping a pool on day one, SupplyFun routes liquidity in stages. Each market-cap milestone a launch hits unlocks the next tranche — automatically, on-chain.</p>
+          </div>
+          <div class="mile-track">
+            <div class="mile-line"><i></i></div>
+            <div class="mile-nodes">
+              <div class="mile-node" data-at="10"><b>$100K</b><span>Seed pool opens</span></div>
+              <div class="mile-node" data-at="35"><b>$500K</b><span>Tranche two routes</span></div>
+              <div class="mile-node" data-at="60"><b>$1M</b><span>Depth doubles</span></div>
+              <div class="mile-node" data-at="85"><b>$5M</b><span>Boost eligible</span></div>
+              <div class="mile-node" data-at="100"><b>$10M</b><span>Fully routed</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BIG CTA ================= -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="cta-panel reveal">
+          <span class="eyebrow" style="justify-content:center">Ready when you are</span>
+          <h2>Someone's going to launch it.<br/>Make it the fair version.</h2>
+          <p>Deploy a token for your favorite creator today — their share will be waiting in escrow whenever they come to collect.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary btn-lg" href="launch.html">Launch a token</a>
+            <a class="btn btn-ghost btn-lg" href="claim.html">Claim your supply</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="index.html">
+            <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect x="2" y="10" width="28" height="20" rx="6" fill="#b6f34e"/>
+              <path d="M16 2 L23 10 H9 Z" fill="#4ade80"/>
+              <rect x="12" y="16" width="8" height="8" rx="2" fill="#0b1006"/>
+              <circle cx="16" cy="20" r="1.6" fill="#b6f34e"/>
+            </svg>
+            Supply<em>Fun</em>
+          </a>
+          <p>The escrow-secured creator token launchpad. Anyone can launch; only the real creator can claim.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="launch.html">Launch</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="claim.html">Claim supply</a></li>
+            <li><a href="claim.html">Check eligibility</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Protocol</h5>
+          <ul>
+            <li><a href="index.html#how-it-works">How it works</a></li>
+            <li><a href="index.html#how-it-works">Escrow details</a></li>
+            <li><a href="index.html#launches">Milestone liquidity</a></li>
+            <li><a href="#">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Brand</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>© 2026 SupplyFun. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.3 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.5l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.9H5.8L17.8 20z"/></svg>
+          </a>
+          <a href="#" aria-label="Discord">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.4c1.7.4 2.5 1 3.3 1.7A16 16 0 0 0 12 3.7c-2.3 0-4.4.5-6.5 1.4.8-.7 1.7-1.3 3.3-1.7L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.6 8.5 1 12.5 1.3 16.4c1.9 1.4 3.7 2.2 5.5 2.8l1.1-1.9c-.9-.3-1.8-.8-2.5-1.4l.6-.5c2 1 4.1 1.5 6 1.5s4-.5 6-1.5l.6.5c-.7.6-1.6 1.1-2.5 1.4l1.1 1.9c1.8-.6 3.6-1.4 5.5-2.8.4-4.5-.7-8.4-2.4-12zM8.7 14.2c-.9 0-1.7-.9-1.7-1.9s.7-1.9 1.7-1.9 1.7.9 1.7 1.9-.8 1.9-1.7 1.9zm6.6 0c-.9 0-1.7-.9-1.7-1.9s.7-1.9 1.7-1.9 1.7.9 1.7 1.9-.8 1.9-1.7 1.9z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5A10.5 10.5 0 0 0 8.7 22c.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.2-3.5-1.2-.5-1.2-1.2-1.6-1.2-1.6-1-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.7-1.4-2.3-.3-4.8-1.2-4.8-5.2 0-1.1.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.7 1.1 2.8 0 4-2.5 4.9-4.8 5.2.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <p class="disclaimer">
+        SupplyFun is a demonstration project. Nothing on this site is financial advice, and the launches,
+        handles, and figures shown are fictional placeholder data. Digital assets are volatile — always do
+        your own research before interacting with any on-chain protocol.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ================= WALLET MODAL ================= -->
+  <div class="modal-backdrop" id="wallet-modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-label="Connect a wallet">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <h3>Connect a wallet</h3>
+      <p>Demo mode — connecting simulates a session, no real wallet is used.</p>
+      <button class="wallet-option"><span class="w-icon" style="background:rgba(182,243,78,.15)">👻</span> Phantom <small>Popular</small></button>
+      <button class="wallet-option"><span class="w-icon" style="background:rgba(125,211,252,.15)">🌊</span> Solflare</button>
+      <button class="wallet-option"><span class="w-icon" style="background:rgba(251,191,36,.15)">🎒</span> Backpack</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Launch a token — SupplyFun</title>
+  <meta name="description" content="Deploy a creator token on SupplyFun. The creator's supply is locked in escrow until they verify and claim it." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="index.html">
+        <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="10" width="28" height="20" rx="6" fill="#b6f34e"/>
+          <path d="M16 2 L23 10 H9 Z" fill="#4ade80"/>
+          <rect x="12" y="16" width="8" height="8" rx="2" fill="#0b1006"/>
+          <circle cx="16" cy="20" r="1.6" fill="#b6f34e"/>
+        </svg>
+        Supply<em>Fun</em>
+      </a>
+      <ul class="nav-links">
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="launch.html" class="active">Launch</a></li>
+        <li><a href="claim.html">Claim</a></li>
+        <li><a href="index.html#how-it-works">How it works</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-sm" data-open-wallet>Connect wallet</button>
+        <a class="btn btn-primary btn-sm" href="launch.html">Launch token</a>
+        <button class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <nav class="nav-mobile">
+      <a href="explore.html">Explore</a>
+      <a href="launch.html">Launch</a>
+      <a href="claim.html">Claim</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="#" data-open-wallet>Connect wallet</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Launch</span>
+        <h1>Deploy a creator token</h1>
+        <p>Name the creator, set the escrowed share, and go live. Their allocation locks the instant the token mints — you never hold it, and neither does anyone else.</p>
+      </div>
+    </section>
+
+    <section class="wrap layout-2col">
+      <form class="form-panel" id="launch-form">
+        <div class="form-grid">
+          <div class="two">
+            <div class="field">
+              <label for="token-name">Token name</label>
+              <input id="token-name" type="text" placeholder="e.g. GlowCoin" required />
+            </div>
+            <div class="field">
+              <label for="token-ticker">Ticker</label>
+              <input id="token-ticker" type="text" placeholder="e.g. GLOW" maxlength="8" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="creator-handle">Creator's X handle</label>
+            <input id="creator-handle" type="text" placeholder="@creator" required />
+            <p class="hint">This is who the escrowed supply belongs to. Only this account can ever claim it.</p>
+          </div>
+          <div class="field">
+            <label for="creator-pct">Creator allocation (% of supply)</label>
+            <input id="creator-pct" type="number" min="1" max="50" value="10" required />
+            <p class="hint">Between 1% and 50%. Locked in a program-owned vault at mint.</p>
+          </div>
+          <div class="field">
+            <label for="token-desc">Description <span style="color:var(--text-faint);font-weight:400">(optional)</span></label>
+            <textarea id="token-desc" placeholder="What's this launch about?"></textarea>
+          </div>
+          <div class="escrow-preview" id="escrow-preview">
+            <div class="row"><span>Escrowed for</span><b data-p-handle>—</b></div>
+            <div class="row"><span>Locked share</span><b data-p-pct>10%</b></div>
+            <div class="row"><span>Open market share</span><b data-p-open>90%</b></div>
+            <div class="row"><span>Unlock condition</span><b>X-verified claim</b></div>
+          </div>
+          <button class="btn btn-primary btn-lg" type="submit">Deploy token</button>
+        </div>
+      </form>
+
+      <aside class="side-card">
+        <h4>What happens when you deploy</h4>
+        <ol>
+          <li>The token mints with your chosen name and ticker.</li>
+          <li>The creator's share moves straight into an on-chain escrow vault.</li>
+          <li>Seed liquidity opens; deeper tranches unlock at market-cap milestones.</li>
+          <li>The creator gets notified they have supply waiting — claimable any time with an X sign-in.</li>
+        </ol>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-base" style="border-top:none;padding-top:0">
+        <span>© 2026 SupplyFun. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="index.html">Home</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="wallet-modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-label="Connect a wallet">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <h3>Connect a wallet</h3>
+      <p>Demo mode — connecting simulates a session, no real wallet is used.</p>
+      <button class="wallet-option"><span class="w-icon" style="background:rgba(182,243,78,.15)">👻</span> Phantom <small>Popular</small></button>
+      <button class="wallet-option"><span class="w-icon" style="background:rgba(125,211,252,.15)">🌊</span> Solflare</button>
+      <button class="wallet-option"><span class="w-icon" style="background:rgba(251,191,36,.15)">🎒</span> Backpack</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
