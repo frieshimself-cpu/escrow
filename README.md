@@ -6,7 +6,8 @@ escrow until the verified creator (via X sign-in) claims it.
 
 Inspired by the structure of modern Solana launchpad sites, rebuilt with
 original copy, original artwork, and a dark violet/cyan "midnight" theme
-with gradient CTAs and a hexagonal vault logo.
+with gradient CTAs. The logo is a neon circuit ring (blue → violet →
+orange) around a golden supply bag with a drop arrow.
 
 ## Pages
 
